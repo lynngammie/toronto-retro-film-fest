@@ -17,37 +17,47 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) :
+    	<?php $movieQuery = new WP_Query(array(
+    	    'post_type' => 'movie-post',
+    	    // 'orderby' => 'title',
+    	    // 'order' => 'ASC',
+    	    'posts-per-page' => 1
+    	)); ?>
+    	
+    	<?php if ($movieQuery-> have_posts()): ?>
+    	  <?php while($movieQuery-> have_posts()): ?>
+    	    <?php $movieQuery->the_post(); ?>
+					<div class="movie-poster">
+						<img src="<?php the_field('movie_poster')?>" alt="">
+					</div>
+					<div class="movie-info">
+						<h4><?php the_title(); ?></h4>
+						<p class="movie-date">
+							<?php the_field('date')?>
+						</p>
+						<p class="movie-time">
+							<?php the_field('time')?>
+						</p>
+						<div class="movie-flex">
+							<p class="movie-blurb">
+								<?php the_content(); ?>
+							</p>
+							<div class="movie-deets">
+								<h5>Starring</h5>
+								<p class="movie-text"><?php the_field('starring') ?></p>
+								<h5>Run Time</h5>
+								<p class="movie-text"><?php the_field('run_time') ?></p>
+								<h5>Original Release</h5>
+								<p class="movie-text"><?php the_field('original_release') ?></p>
+							</div>
+							<?php the_field('trailer') ?>
+						</div> <!-- close movie-flex --> 
+					</div>
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-
-			<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
+    	  	<?php endwhile; ?>
+    	  <?php wp_reset_postdata(); ?>
+    	<?php endif; ?>
+     
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
