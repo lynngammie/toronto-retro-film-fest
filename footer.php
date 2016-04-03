@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer container_16" role="contentinfo">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'toronto-retro-film-fest' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'toronto-retro-film-fest' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>

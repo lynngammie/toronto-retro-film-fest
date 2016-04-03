@@ -16,10 +16,23 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+			<?php if (has_post_thumbnail( $post->ID ) ): ?>
+			  <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+			  <?php $thumbnail_id = get_post_thumbnail_id( $post->ID );
+	    	    		 $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);?>
+			  <?php endif; ?>
+			  <div class="grid_10">
+			  	<h1>Toronto Retro Film Festival</h1>
+			  	<p class="title-text">Toronto</p>
+			  	<p class="retro-text">Retro</p>
+			  	<p class="title-text">Film Festival</p>
+			  	<p class="title-subtext">July 17th - July 23rd</p>
+					<img src="<?php echo $image[0]; ?>" alt="<?php echo $alt; ?>">
+				</div>
 
 			<?php // Start the loop ?>
 	  		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	  		<p><?php the_content(); ?></p>
+	  			<p><?php the_content(); ?></p>
 	  	<?php endwhile; // end the loop?>
 
 
@@ -47,5 +60,4 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
-get_footer();
+// get_footer();

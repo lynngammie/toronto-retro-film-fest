@@ -114,6 +114,9 @@ add_action( 'widgets_init', 'toronto_retro_film_fest_widgets_init' );
  * Enqueue scripts and styles.
  */
 function toronto_retro_film_fest_scripts() {
+
+	wp_enqueue_style( 'toronto-retro-film-fest-960', get_template_directory_uri() . '/960.css' );
+
 	wp_enqueue_style( 'toronto-retro-film-fest-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'toronto-retro-film-fest-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

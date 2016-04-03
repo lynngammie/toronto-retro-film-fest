@@ -51,6 +51,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import "normalize";
 
+@include font-face("Comfortaa-Bold", fonts/Comfortaa-Bold, bold);
+@include font-face("Comfortaa-Regular", fonts/Comfortaa-Regular, regular);
+@include font-face("Comfortaa-Light", fonts/Comfortaa-Light, light);
+@include font-face("Orbitron-Black", fonts/Orbitron-Black, black);
+@include font-face("Orbitron-Bold", fonts/Orbitron-Bold, bold);
+@include font-face("Orbitron-Medium", fonts/Orbitron-Medium, medium);
+@include font-face("Orbitron-Regular", fonts/Orbitron-Regular, regular);
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -105,3 +113,43 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
+
+
+// A note to Pramesh and whoever else is looking at this code: I've not worked with underscore before, and I have no idea where to put any of the styling. There are A LOT of sass partials, so in the interest of time and my own understanding I am going to do all the styling here. Follow the headings below for clarity.
+
+//COMMON STYLES
+
+$teal:#07cbf1;
+$pink:#e904a5;
+$background:#131829;
+
+body {
+	background-color: $background;
+	color:white;
+}
+
+h1 {
+	display:none;
+}
+
+h2 {
+	font-family:"Orbitron-Bold";
+}
+
+//FRONT PAGE - HEADER
+
+.title-text, .title-subtext {
+	font-family:"Orbitron-Regular";
+	margin:0;
+}
+
+.title-text {
+	font-size:1.6rem;
+}
+
+.retro-text {
+	font-family:"Orbitron-Black";
+	font-size:4rem;
+	text-transform: uppercase;
+	margin:0;
+}
