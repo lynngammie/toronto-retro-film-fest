@@ -132,24 +132,94 @@ h1 {
 	display:none;
 }
 
-h2 {
-	font-family:"Orbitron-Bold";
-}
-
 //FRONT PAGE - HEADER
 
-.title-text, .title-subtext {
+.title-content {
+	position:relative;
+}
+
+.title-content-text {
+	position:absolute;
+	top: 45%;
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%;
+}
+
+.title-text, .title-subtext, .title-text-right {
 	font-family:"Orbitron-Regular";
 	margin:0;
 }
 
-.title-text {
+.title-text, .title-text-right {
 	font-size:1.6rem;
+}
+
+.title-text-right, .title-subtext {
+	text-align: right;
 }
 
 .retro-text {
 	font-family:"Orbitron-Black";
-	font-size:4rem;
+	font-size:5rem;
 	text-transform: uppercase;
 	margin:0;
+	transform: skewX(-20deg) rotate(-10deg);
 }
+
+//FRONT PAGE - TEXT
+
+.blurb-content {
+	background:$background;
+	text-align:center;
+	font-family: "Comfortaa-Light";
+	transform-origin: 50% 100%;
+	margin-top:-250px;
+	transform: perspective(300px) rotateX(20deg);
+	h2 {
+		color:$teal;
+		font-family: "Comfortaa-Regular";
+		padding-top:20px;
+	}
+	h2, h3 {
+		text-transform: uppercase;
+	}
+}
+
+//FRONT PAGE - GALLERY
+
+.gallery-container {
+
+}
+
+ul.gallery {
+	li:nth-child(n+6) {
+		border:3px solid yellow;
+	} 
+	li:nth-child(-n+5) {
+    border:3px solid green;   
+	}
+
+}
+
+//FRONT PAGE - FOOTER 
+
+.tix-text {
+	text-align: center;
+	text-transform: uppercase;
+	font-family: "Orbitron-Medium";
+	letter-spacing: 2px;
+	margin:12px 0;
+	text-shadow: 0px 0px 12px $pink;
+}
+
+.retro {
+	height:6px;
+	margin:0;
+	background-image: -webkit-linear-gradient(left, $background, rgba(7, 201, 239,0.75), $background); 
+}
+
+//MOVIE PAGE - HEADER
+
+
+//MOVIE PAGE - BODY
+
