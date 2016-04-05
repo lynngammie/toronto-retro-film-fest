@@ -135,7 +135,7 @@ $background:#131829;
 	text-shadow: 0px 0px 20px white;
 }
 
-img {width:100%;}
+img {max-width:100%;}
 
 body {
 	background-color: $background;
@@ -156,7 +156,7 @@ h1 {
 	position:absolute;
 	top: 45%;
   transform: translateY(-50%) translateX(-50%);
-  left: 50%;
+  left: 61%;
 }
 
 .title-text, .title-subtext, .title-text-right {
@@ -180,17 +180,12 @@ h1 {
 	transform: skewX(-20deg) rotate(-10deg);
 }
 
-.grid_16_special {
-	width:960px;
-	padding-left:180px;
-	padding-right:180px;
-}
-
 //FRONT PAGE - TEXT
 
 .blurb-content {
 	background:$background;
 	text-align:center;
+	padding-right:180px;
 	font-family: "Comfortaa-Light";
 	transform-origin: 50% 100%;
 	margin-top:-230px;

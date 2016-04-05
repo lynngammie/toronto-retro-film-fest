@@ -21,7 +21,8 @@ get_header(); ?>
 			  <?php $thumbnail_id = get_post_thumbnail_id( $post->ID );
 	    	    		 $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);?>
 			  <?php endif; ?>
-			  <div class="grid_16 suffix_3 prefix_3 title-content">
+			  <div class="thirteen columns offset-by-three title-content">
+			  <!-- <div class="grid_16 suffix_3 prefix_3 title-content"> -->
 					<img src="<?php echo $image[0]; ?>" alt="<?php echo $alt; ?>">
 					<div class="title-content-text">
 				  	<h1>Toronto Retro Film Festival</h1>
@@ -34,7 +35,8 @@ get_header(); ?>
 
 			<?php // Start the loop ?>
 	  		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	  			<div class="grid_16 suffix_3 prefix_3 blurb-content">
+	  			<div class="sixteen columns offset-by-three blurb-content">
+	  			<!-- <div class="grid_16 suffix_3 prefix_3 blurb-content"> -->
 	  				<p><?php the_content(); ?></p>
 	  			</div>
 	  	<?php endwhile; // end the loop?>
@@ -46,7 +48,8 @@ get_header(); ?>
 	  	    'order' => 'ASC'
 	  	)); ?>
 			
-	  	<div class="gallery-container grid_16 prefix_1">
+	  	<div class="gallery-container fourteen columns offset-by-one">
+	  	<!-- <div class="gallery-container grid_16 prefix_1"> -->
 	  		<!-- <p class="arrows grid_1" id="prev"><<</p> -->
 	  		<ul class="gallery">
 
@@ -54,7 +57,7 @@ get_header(); ?>
 			  	  <?php while($posterQuery-> have_posts()): ?>
 			  	    <?php $posterQuery->the_post(); ?>
 			  	    <!-- what we want to show goes here -->
-			  	    <li class="gallery-item grid_2">
+			  	    <li class="gallery-item two columns">
 			  	    <p class="center-date"><?php the_field('date') ?></p>
 			  	    <div class="poster">
 								<a href="<?php echo get_post_permalink(); ?>">
@@ -68,10 +71,11 @@ get_header(); ?>
 			  	<?php endif; ?>
 				
 				</ul>
-				<a class="arrows grid_1" href="#" id="next">>></a>
+				<a class="arrows one column" href="#" id="next">>></a>
 			</div>
 
-			<div class="tix footer-text grid_16 prefix_4 suffix_4">
+			<div class="tix footer-text twelve columns offset-by-four">
+			<!-- <div class="tix footer-text grid_16 prefix_4 suffix_4"> -->
 				<hr class="retro">
 				<p class="tix-text">Click for Tix!</p>
 				<hr class="retro">

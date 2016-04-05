@@ -33,27 +33,30 @@ get_header(); ?>
 	  	    'order' => 'ASC'
 	  	)); ?>
 
-	  	<div class="gallery-container grid_16 prefix_2 suffix_2">
-	  		<h3>Festival Film Schedule</h3>
-	  		<a class="arrows grid_1" id="prev" href="#"><<</a>
+	  	<div class="gallery-container fourteen columns offset-by-one">
+	  	<!-- <div class="gallery-container grid_16 prefix_1"> -->
+	  		<!-- <p class="arrows grid_1" id="prev"><<</p> -->
 	  		<ul class="gallery">
 
 			  	<?php if ($posterQuery-> have_posts()): ?>
 			  	  <?php while($posterQuery-> have_posts()): ?>
 			  	    <?php $posterQuery->the_post(); ?>
 			  	    <!-- what we want to show goes here -->
-			  	    <li class="gallery-item grid_2">
+			  	    <li class="gallery-item two columns">
 			  	    <p class="center-date"><?php the_field('date') ?></p>
-							<a class="poster" href="<?php echo get_post_permalink(); ?>">
-			  	    	<img src="<?php the_field('movie_poster') ?>" alt="">
-			  	    </a>
+			  	    <div class="poster">
+								<a href="<?php echo get_post_permalink(); ?>">
+				  	    	<img src="<?php the_field('movie_poster') ?>" alt="">
+				  	    <p class="poster-overlay"><?php the_title(); ?></p>
+				  	    </a>
+							</div>
 			  	    </li>
 			  	  	<?php endwhile; ?>
 			  	  <?php wp_reset_postdata(); ?>
 			  	<?php endif; ?>
 				
 				</ul>
-				<a class="arrows grid_1" id="next" href="#">>></a>
+				<a class="arrows one column" href="#" id="next">>></a>
 			</div>
 
 		</main><!-- #main -->

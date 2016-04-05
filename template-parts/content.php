@@ -43,11 +43,11 @@
 		</nav>
 	</header><!-- .entry-header -->
 	
-	<div class="entry-content">
-		<div class="movie-poster grid_7">
+	<div class="entry-content sixteen columns offset-by-one">
+		<div class="movie-poster six columns">
 			<img src="<?php the_field('movie_poster')?>" alt="">
 		</div>
-		<div class="movie-info grid_9 prefix_1">
+		<div class="movie-info eight columns offset-by-one">
 			<h4><?php the_title(); ?></h4>
 			<p class="movie-date">
 				<?php the_field('date')?>
@@ -56,10 +56,10 @@
 				<?php the_field('time')?>
 			</p>
 			<div class="movie-flex">
-				<div class="movie-blurb grid_4">
+				<div class="movie-blurb four columns">
 					<?php the_content(); ?>
 				</div>
-				<div class="movie-deets grid_3">
+				<div class="movie-deets three columns">
 					<h5>Starring</h5>
 					<p class="movie-text"><?php the_field('starring') ?></p>
 					<h5>Run Time</h5>
