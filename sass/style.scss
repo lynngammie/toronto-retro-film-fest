@@ -127,6 +127,16 @@ $background:#131829;
 	text-shadow: 0px 0px 20px $pink;
 }
 
+@mixin box-glow {
+	box-shadow: 0px 0px 20px $pink;
+}
+
+@mixin link-glow{
+	text-shadow: 0px 0px 20px white;
+}
+
+img {width:100%;}
+
 body {
 	background-color: $background;
 	color:white;
@@ -170,6 +180,12 @@ h1 {
 	transform: skewX(-20deg) rotate(-10deg);
 }
 
+.grid_16_special {
+	width:960px;
+	padding-left:180px;
+	padding-right:180px;
+}
+
 //FRONT PAGE - TEXT
 
 .blurb-content {
@@ -177,7 +193,7 @@ h1 {
 	text-align:center;
 	font-family: "Comfortaa-Light";
 	transform-origin: 50% 100%;
-	margin-top:-250px;
+	margin-top:-230px;
 	transform: perspective(300px) rotateX(20deg);
 	h2 {
 		color:$teal;
@@ -191,16 +207,67 @@ h1 {
 
 //FRONT PAGE - GALLERY
 
-.gallery-container {
+.center-date, .nav-text, .poster-overlay {
+	font-family: "Comfortaa-Regular";
+	font-size: 0.8rem;
+	text-align: center;
+	text-transform: uppercase;
+}
 
+.gallery-container {
+	a {
+		color:white;
+		text-decoration: none;
+		@include link-glow;
+		font-family: "Comfortaa-Regular";
+		margin-top:75px;
+	}
+	// display:inline-block;
+}
+
+.poster {
+	position:relative;
+	img {
+		height:150px;
+	}
+	a:hover {
+		text-decoration:none;
+		color:inherit;
+	}
+}
+
+.poster-overlay {
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:5px;
+	right:0;
+	width:100%;
+	margin:0 auto;
+	padding-top:40px;
+	background-color: $pink;
+	@include box-glow;
+	opacity:0;
+	transition: opacity 0.5s;
+}
+
+.poster-overlay:hover {
+	opacity:1;
+}
+
+h3 {
+	font-family: "Comfortaa-Regular";
+	text-transform: uppercase;
+	text-align: center;
 }
 
 ul.gallery {
 	li:nth-child(n+6) {
-		border:3px solid yellow;
+		// border:3px solid yellow;
+		display:none;
 	} 
 	li:nth-child(-n+5) {
-    border:3px solid green;   
+    // border:3px solid green;   
 	}
 
 }
@@ -222,10 +289,37 @@ ul.gallery {
 	background-image: -webkit-linear-gradient(left, $background, rgba(7, 201, 239,0.75), $background); 
 }
 
+.footer-text {
+	margin:60px 0;
+}
+
 //MOVIE PAGE - HEADER
+
+nav {
+	margin-bottom:20px;
+	display:flex;
+	align-items:center;
+}
+
+.nav-text, .tix {
+	width:20%;
+}
+
+.nav-text {
+	font-size:0.7rem;
+	margin:0;
+}
+
+.nav-text:nth-child(odd) {
+	color:$teal;
+}
 
 
 //MOVIE PAGE - BODY
+
+.entry-content {
+	margin-top:60px;
+}
 
 h4 {
 	font-family: "Comfortaa-Regular", sans-serif;

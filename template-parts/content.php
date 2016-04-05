@@ -19,18 +19,35 @@
 			}
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php toronto_retro_film_fest_posted_on(); ?>
-		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
-	</header><!-- .entry-header -->
 
+		<nav>
+			<?php if (has_post_thumbnail( $post->ID ) ): ?>
+			<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+			<?php $thumbnail_id = get_post_thumbnail_id( $post->ID );
+	    	    		 $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);?>
+			<?php endif; ?>
+			<a href="<?php echo get_home_url(); ?>
+">
+				<img src="<?php echo $image[0]; ?>" alt="<?php echo $alt; ?>">
+			</a>
+			<p class="nav-text">July 17th-July 23rd</p>
+			<p class="nav-text">The Docks Drive-In Theatre</p>
+			<p class="nav-text">176 Cherry Street, Toronto</p>
+			<div class="tix">
+				<hr class="retro">
+				<p class="tix-text">Tickets!</p>
+				<hr class="retro">
+			</div>
+		</nav>
+	</header><!-- .entry-header -->
+	
 	<div class="entry-content">
 		<div class="movie-poster grid_7">
 			<img src="<?php the_field('movie_poster')?>" alt="">
 		</div>
-		<div class="movie-info grid_8 prefix_1">
+		<div class="movie-info grid_9 prefix_1">
 			<h4><?php the_title(); ?></h4>
 			<p class="movie-date">
 				<?php the_field('date')?>

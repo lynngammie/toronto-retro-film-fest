@@ -33,7 +33,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function () {
-	return gulp.src('./js/scripts.js')
+	return gulp.src('./js/main.js')
 		.pipe(plumber({
 		  errorHandler: notify.onError("Error: <%= error.message %>")
 		}))

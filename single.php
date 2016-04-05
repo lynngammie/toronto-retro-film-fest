@@ -34,7 +34,8 @@ get_header(); ?>
 	  	)); ?>
 
 	  	<div class="gallery-container grid_16 prefix_2 suffix_2">
-	  		<p class="arrows grid_1" id="prev"><<</p>
+	  		<h3>Festival Film Schedule</h3>
+	  		<a class="arrows grid_1" id="prev" href="#"><<</a>
 	  		<ul class="gallery">
 
 			  	<?php if ($posterQuery-> have_posts()): ?>
@@ -42,7 +43,8 @@ get_header(); ?>
 			  	    <?php $posterQuery->the_post(); ?>
 			  	    <!-- what we want to show goes here -->
 			  	    <li class="gallery-item grid_2">
-							<a href="<?php echo get_post_permalink(); ?>">
+			  	    <p class="center-date"><?php the_field('date') ?></p>
+							<a class="poster" href="<?php echo get_post_permalink(); ?>">
 			  	    	<img src="<?php the_field('movie_poster') ?>" alt="">
 			  	    </a>
 			  	    </li>
@@ -51,7 +53,7 @@ get_header(); ?>
 			  	<?php endif; ?>
 				
 				</ul>
-				<p class="arrows grid_1" id="next">>></p>
+				<a class="arrows grid_1" id="next" href="#">>></a>
 			</div>
 
 		</main><!-- #main -->

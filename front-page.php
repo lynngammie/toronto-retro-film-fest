@@ -45,9 +45,9 @@ get_header(); ?>
 	  	    'post_type' => 'movie-post',
 	  	    'order' => 'ASC'
 	  	)); ?>
-
-	  	<div class="gallery-container grid_16 prefix_2 suffix_2">
-	  		<p class="arrows grid_1" id="prev"><<</p>
+			
+	  	<div class="gallery-container grid_16 prefix_1">
+	  		<!-- <p class="arrows grid_1" id="prev"><<</p> -->
 	  		<ul class="gallery">
 
 			  	<?php if ($posterQuery-> have_posts()): ?>
@@ -55,19 +55,23 @@ get_header(); ?>
 			  	    <?php $posterQuery->the_post(); ?>
 			  	    <!-- what we want to show goes here -->
 			  	    <li class="gallery-item grid_2">
-							<a href="<?php echo get_post_permalink(); ?>">
-			  	    	<img src="<?php the_field('movie_poster') ?>" alt="">
-			  	    </a>
+			  	    <p class="center-date"><?php the_field('date') ?></p>
+			  	    <div class="poster">
+								<a href="<?php echo get_post_permalink(); ?>">
+				  	    	<img src="<?php the_field('movie_poster') ?>" alt="">
+				  	    <p class="poster-overlay"><?php the_title(); ?></p>
+				  	    </a>
+							</div>
 			  	    </li>
 			  	  	<?php endwhile; ?>
 			  	  <?php wp_reset_postdata(); ?>
 			  	<?php endif; ?>
 				
 				</ul>
-				<p class="arrows grid_1" id="next">>></p>
+				<a class="arrows grid_1" href="#" id="next">>></a>
 			</div>
 
-			<div class="tix grid_16 prefix_4 suffix_4">
+			<div class="tix footer-text grid_16 prefix_4 suffix_4">
 				<hr class="retro">
 				<p class="tix-text">Click for Tix!</p>
 				<hr class="retro">
