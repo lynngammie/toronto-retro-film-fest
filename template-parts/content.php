@@ -28,13 +28,15 @@
 			<?php $thumbnail_id = get_post_thumbnail_id( $post->ID );
 	    	    		 $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);?>
 			<?php endif; ?>
-			<a href="<?php echo get_home_url(); ?>
+			<a class="media-center" href="<?php echo get_home_url(); ?>
 ">
 				<img src="<?php echo $image[0]; ?>" alt="<?php echo $alt; ?>">
 			</a>
-			<p class="nav-text">July 17th-July 23rd</p>
-			<p class="nav-text">The Docks Drive-In Theatre</p>
-			<p class="nav-text">176 Cherry Street, Toronto</p>
+			<div class="nav-text-container">
+				<p class="nav-text">July 17th-July 23rd</p>
+				<p class="nav-text">The Docks Drive-In Theatre</p>
+				<p class="nav-text">176 Cherry Street, Toronto</p>
+			</div>
 			<div class="tix">
 				<hr class="retro">
 				<p class="tix-text">Tickets!</p>

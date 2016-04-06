@@ -94,9 +94,14 @@
 *****************************/
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-	.container                                  { width: 768px; }
+	#page {
+		width:100%;
+		margin:0 auto;
+	}
+	.container                                  { width: 768px;
+		margin: 0 auto; }
 	.container .column,
-	.container .columns                         { margin-left: 10px; margin-right: 10px;  }
+	.container .columns                         { margin-left: 0; margin-right: 10px;  }
 	.column.alpha, .columns.alpha               { margin-left: 0; margin-right: 10px; }
 	.column.omega, .columns.omega               { margin-right: 0; margin-left: 10px; }
 	.alpha.omega                                { margin-left: 0; margin-right: 0; }
@@ -155,7 +160,7 @@
 @media only screen and (max-width: 767px) {
 	.container { width: 100%; }
 	.container .columns,
-	.container .column { margin: 0; }
+	/*.container .column { margin: 0 0 0 0; }*/
 
 	.container .one.column,
 	.container .one.columns,
@@ -201,5 +206,7 @@
 	.container .offset-by-fourteen,
 	.container .offset-by-fifteen { padding-left: 0; }
 
+
+	.container .columns, .container .column                         { margin-left: 0; margin-right: 0;  }
 }
 

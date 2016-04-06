@@ -33,7 +33,7 @@ get_header(); ?>
 	  	    'order' => 'ASC'
 	  	)); ?>
 
-	  	<div class="gallery-container fourteen columns offset-by-one">
+	  	<div class="gallery-container fifteen columns offset-by-one">
 	  	<!-- <div class="gallery-container grid_16 prefix_1"> -->
 	  		<!-- <p class="arrows grid_1" id="prev"><<</p> -->
 	  		<ul class="gallery">
@@ -44,7 +44,7 @@ get_header(); ?>
 			  	    <!-- what we want to show goes here -->
 			  	    <li class="gallery-item two columns">
 			  	    <p class="center-date"><?php the_field('date') ?></p>
-			  	    <div class="poster">
+			  	    <div class="poster" id="<?php the_field('movie_id') ?>">
 								<a href="<?php echo get_post_permalink(); ?>">
 				  	    	<img src="<?php the_field('movie_poster') ?>" alt="">
 				  	    <p class="poster-overlay"><?php the_title(); ?></p>
@@ -56,7 +56,10 @@ get_header(); ?>
 			  	<?php endif; ?>
 				
 				</ul>
-				<a class="arrows one column" href="#" id="next">>></a>
+				<!-- <a class="arrows one column" id="next">>></a> -->
+			</div>
+			<div class="arrows-container sixteen columns">
+				<a class="arrows" id="prev"><<</a><a class="arrows" id="next">>></a>
 			</div>
 
 		</main><!-- #main -->
